@@ -22,8 +22,8 @@ public class DiansWineryApplication {
         Pipe<String> filterPipe = new Pipe<>();
 
         // Create and add filters to the pipe
-        Filter<String> filterUnnamed = new FilterUnnamed(true);
-        Filter<String> locationNameFilter = new LocationNameFilter(true);
+        Filter<String> filterUnnamed = new FilterUnnamed();
+        Filter<String> locationNameFilter = new LocationNameFilter();
 
         filterPipe.addFilter(filterUnnamed);
         filterPipe.addFilter(locationNameFilter);

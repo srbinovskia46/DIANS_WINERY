@@ -1,11 +1,6 @@
 package mk.ukim.finki.dians_winery.pipeandfilter;
 
 public class FilterUnnamed implements Filter<String>{
-    boolean hasInfo;
-
-    public FilterUnnamed(boolean hasInfo) {
-        this.hasInfo = hasInfo;
-    }
 
     @Override
     public String execute(String input) {

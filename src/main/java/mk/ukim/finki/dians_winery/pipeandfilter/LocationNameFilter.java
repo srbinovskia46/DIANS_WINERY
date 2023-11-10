@@ -4,11 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LocationNameFilter implements Filter<String> {
-    boolean hasInfo;
-
-    public LocationNameFilter(boolean hasInfo) {
-        this.hasInfo = hasInfo;
-    }
 
     @Override
     public String execute(String input) {
