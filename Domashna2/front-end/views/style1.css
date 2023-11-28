@@ -1,0 +1,66 @@
+body {
+    background-image: url('../../../src/main/resources/media/Backround_image.jpg');
+    background-size: 100%;
+}
+
+.tab {
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    font-size: 25px;
+    display: inline-block;
+    margin-left: 80px;
+    margin-top: 70px;
+
+}
+
+.navigation{
+    background-color: black;
+    height: 140px; /*140*/
+    margin-top: -120px;
+    margin-left: -9px;
+    margin-right: -8px;
+    padding-left: 650px;
+}
+
+.lev_agol{
+    color: white;
+    font-size: 25px;
+    padding-left: 150px;
+    margin-bottom: -120px;
+}
+
+.leva_slika{
+    padding-left: 60px;
+    /*margin-bottom: -10px;*/
+    margin-top: 70px;
+}
+
+.mk_flag{
+    margin-left: 1600px;
+    margin-top: -60px;
+}
+
+.usa_flag{
+    margin-left: 1670px;
+    margin-top: -30px;
+}
+
+.text1{
+    color: white;
+    font-family: Arial;
+    font-size: 50px;
+    margin-left: 800px;
+    font-weight: bolder;
+    margin-top: 350px;
+}
+
+.text2{
+    color: white;
+    font-family: "Times New Roman";
+    font-size: 35px;
+    margin-left: 550px;
+    margin-top: 30px;
+}
+
+

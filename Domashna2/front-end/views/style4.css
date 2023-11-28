@@ -1,0 +1,68 @@
+.tab {
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    font-size: 25px;
+    display: inline-block;
+    margin-left: 80px;
+    margin-top: 70px;
+
+}
+
+.navigation{
+    background-color: black;
+    height: 140px; /*140*/
+    margin-top: -120px;
+    margin-left: -9px;
+    margin-right: -8px;
+    padding-left: 650px;
+}
+
+.lev_agol{
+    color: white;
+    font-size: 25px;
+    padding-left: 150px;
+    margin-bottom: -120px;
+}
+
+.leva_slika{
+    padding-left: 60px;
+    /*margin-bottom: -10px;*/
+    margin-top: 70px;
+}
+
+.mk_flag{
+    margin-left: 1600px;
+    margin-top: -60px;
+}
+
+.usa_flag{
+    margin-left: 1670px;
+    margin-top: -30px;
+}
+
+.background{
+    background-color: black;
+    height: 867px;
+    margin-left: -100px;
+    margin-right: -8px;
+    margin-bottom: -10px;
+    padding-top: 10px;
+}
+
+.search_text{
+    color: white;
+    font-size: 28px;
+    margin-left: 200px;
+    padding-top: 70px;
+}
+
+.ucesnici{
+    color: white;
+    font-size: 28px;
+    margin-left: 200px;
+    padding-top: 20px;
+}
+
+
+
