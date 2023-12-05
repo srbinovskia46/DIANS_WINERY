@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WineMapper</title>
+
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+          integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+          crossorigin=""/>
+
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+            integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+            crossorigin=""></script>
+
+</head>
+
+<body>
+
+<header th:replace="fragments/header"></header>
+
+<th:block th:if="${mainBodyContent == 'home'}">
+    <footer th:replace="fragments/footer"></footer>
+</th:block>
+
+<section style="margin-top: 100px;" th:include="${mainBodyContent}"></section>
+
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="winery : ${wineries}">
+        <td th:text="${winery.name}"></td>
+        <td th:text="${winery.latitude}"></td>
+        <td th:text="${winery.longitude}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<header class="header" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+    <div style="display: flex; align-items: center; justify-content: space-between">
+        <div style="display: flex; align-items: center;">
+            <a href="/home" class="logo">WineMapper</a>
+        </div>
+
+        <div class="header-right" style="display: flex; align-items: center;">
+
+            <a href="/home"><i class="fa fa-solid fa-house tm-brand-icon"></i></a>
+
+            <th:block th:if="${mainBodyContent == 'home'}">
+                <a id="goToMyLocation" style="cursor: pointer;"><i class="fa-solid fa-bullseye"></i></a>
+                <a id="shareMyLocation" style="cursor: pointer;"><i class="fas fa-location-arrow"></i></a>
+            </th:block>
+
+        </div>
+    </div>
+</header>
