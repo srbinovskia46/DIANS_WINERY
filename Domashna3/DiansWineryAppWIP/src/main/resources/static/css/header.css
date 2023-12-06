@@ -1,0 +1,30 @@
+/* CSS for header */
+.header {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+/* Style the logo */
+.logo {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    margin-left: 10px;
+    transition: color 0.3s; /* Add transition for smooth color change */
+}
+
+/* Change text color on hover */
+.logo:hover {
+    color: red;
+}
+
+/* Style the logo image */
+.logo img {
+    width: 60px; /* Set the width to the desired size */
+    height: auto; /* Automatically adjust height based on width */
+    margin-right: 10px;
+}

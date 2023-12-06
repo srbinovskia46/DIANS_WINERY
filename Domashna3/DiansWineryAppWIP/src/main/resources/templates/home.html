@@ -2,9 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Home</title>
+    <link rel="stylesheet" href="css/home.css" />
+
 </head>
 <body>
+<header th:replace="fragments/header"></header>
+
+<div th:if="${wineries != null}">
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="winery : ${wineries}">
+            <td th:text="${winery.name}"></td>
+            <td th:text="${winery.latitude}"></td>
+            <td th:text="${winery.longitude}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 
 </body>
 </html>

@@ -19,10 +19,10 @@ public class AdminController {
 
     @GetMapping
     public String getAdminDashboard(Model model) {
-        model.addAttribute("pageTitle", "Admin Dashboard - WineMapper");
-        model.addAttribute("mainBodyContent", "admin/admin-dashboard");
+        //model.addAttribute("pageTitle", "Admin Dashboard - WineMapper");
+        //model.addAttribute("mainBodyContent", "admin/admin-dashboard");
 
-        return "master-template";
+        return "admin-dashboard";
     }
 
     @PostMapping("/update-wineries-in-database")
@@ -30,7 +30,7 @@ public class AdminController {
         wineryService.populateDatabaseFromCSV();
         model.addAttribute("mainBodyContent", "admin/admin-dashboard");
         model.addAttribute("wineries", wineryService.listAll());
-        return "master-template";
+        return "redirect:/home";
     }
 
 
