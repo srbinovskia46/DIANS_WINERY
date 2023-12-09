@@ -18,9 +18,7 @@ public class AdminController {
     }
 
     @GetMapping
-    public String getAdminDashboard(Model model) {
-        //model.addAttribute("pageTitle", "Admin Dashboard - WineMapper");
-        //model.addAttribute("mainBodyContent", "admin/admin-dashboard");
+    public String getAdminDashboard() {
 
         return "admin-dashboard";
     }

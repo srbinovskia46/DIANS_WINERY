@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>SIGNUP</title>
+    <link rel="stylesheet" href="/css/login.css" />
+</head>
+<body>
+<div class="container" >
+    <h1 th:if="${hasError}" th:text="${error}"></h1>
+</div>
+<div class="container">
+    <img class="img" src="/img/logo.png">
+    <form class="form-signin mt-xl-5" method="post" action="/register">
+        <h2 class="heading">Register</h2>
+        <p>
+            <label for="username" class="input-label">Username</label>
+            <input type="text" id="username" name="username" class="class-input" placeholder="Username" required="" autofocus="">
+        </p>
+        <p>
+            <label for="password" class="input-label">Password</label>
+            <input type="password" id="password" name="password" class="class-input" placeholder="Password" required="">
+        </p>
+        <p>
+            <label for="repeatedPassword" class="input-label">Repeat Password</label>
+            <input type="password" id="repeatedPassword" name="repeatedPassword" class="class-input" placeholder="Repeat Password" required="">
+        </p>
+        <p>
+            <label for="name" class="input-label">Name</label>
+            <input type="text" id="name" name="name" class="class-input" placeholder="Name" required="" autofocus="">
+        </p>
+        <p>
+            <label for="surname" class="input-label">Surname</label>
+            <input type="text" id="surname" name="surname" class="class-input" placeholder="Surname" required="" autofocus="">
+        </p>
+        <button class="btn-submit" type="submit">Sign up</button>
+    </form>
+    <a href="/login" class="btn">Already have an account? Login here!</a>
+</div>
+</body>
+
+</html>

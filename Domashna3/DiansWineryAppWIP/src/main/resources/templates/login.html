@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/login.css" />
+
+</head>
+<body>
+<div class="container">
+    <img class="img" src="/img/logo.png">
+    <form class="" method="post" action="/login">
+        <h2 class="heading">Sign in</h2>
+        <p>
+            <label for="username" class="input-label">Username</label>
+            <input type="text" id="username" name="username" class="class-input" placeholder="Username" required autofocus th:value="${username}">
+        </p>
+        <p>
+            <label for="password" class="input-label">Password</label>
+            <input type="password" id="password" name="password" class="class-input" placeholder="Password" required th:value="${password}">
+        </p>
+
+
+        <div th:if="${hasError}">
+        <div th:text="${error}" class="text-danger"></div>
+        </div>
+
+        <button class="btn-submit" type="submit">Sign in</button>
+    </form>
+    <a href="/register" class="btn">Register here</a>
+</div>
+</body>
+</html>
+
+
+

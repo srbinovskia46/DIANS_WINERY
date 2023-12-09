@@ -1,0 +1,106 @@
+/* Reset default margin and padding */
+body, h1, h2, h3, p, button {
+    margin: 0;
+    padding: 0;
+}
+
+p{
+    margin-bottom: 10px;
+}
+
+/* Apply black background to the entire page */
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* Style the form elements */
+.container {
+    text-align: center;
+    margin-top: 20px; /* Adjust as needed */
+}
+
+.heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.form-content {
+    text-align: left; /* Align the text within the form content */
+}
+
+.input-label {
+    color: white;
+    display: block;
+    margin-bottom: 3px;
+}
+
+.class-input {
+    border: 2px solid red;
+    color: white;
+    background-color: black;
+    padding: 10px;
+    width: 60%; /* Adjust width as needed */
+    margin-bottom: 10px;
+    display: inline-block; /* Display input fields inline */
+}
+
+.img{
+    height: 80px;
+}
+
+.btn-submit {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    background-color: black;
+    border: 2px solid red;
+    padding: 15px 40px; /* Adjusted padding for larger size */
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    display: inline-block;
+    width: 200px; /* Set the width for both buttons */
+    text-align: center;
+}
+
+.btn {
+    color: white;
+    text-decoration: none;
+    background-color: black;
+    border: 2px solid red;
+    padding: 10px 40px; /* Padding for the Register button */
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    display: inline-block;
+    width: 200px; /* Set the width for both buttons */
+    text-align: center;
+    margin-top: 10px; /* Space between buttons */
+}
+
+.btn-submit:hover,
+.btn:hover {
+    background-color: red;
+    border-color: red;
+    color: white;
+}
+
+.btn-submit:active,
+.btn:active {
+    animation: clickAnimation 0.3s linear; /* Apply animation on button click */
+}
+
+@keyframes clickAnimation {
+    0% {
+        transform: scale(1); /* Initial scale */
+    }
+    50% {
+        transform: scale(0.95); /* Scale down */
+    }
+    100% {
+        transform: scale(1); /* Return to original scale */
+    }
+}
+
+
