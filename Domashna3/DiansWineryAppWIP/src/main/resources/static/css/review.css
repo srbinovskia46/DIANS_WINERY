@@ -1,82 +1,214 @@
-/* Reset default margin and padding */
-body, h1, h2, h3, p, button, table {
+/*!* Reset default margin and padding *!*/
+/*body, h1, h2, h3, p, button, table {*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*}*/
+
+/*!* Apply styles to the body *!*/
+/*body {*/
+/*    font-family: Arial, sans-serif;*/
+/*    padding: 20px;*/
+/*    background-color: #f2f2f2;*/
+/*}*/
+
+/*!* Header style *!*/
+/*header {*/
+/*    background-color: #333;*/
+/*    color: white;*/
+/*    padding: 10px;*/
+/*    text-align: center;*/
+/*}*/
+
+/*!* Main container styles *!*/
+/*.container {*/
+/*    max-width: 800px;*/
+/*    margin: 20px auto;*/
+/*    background-color: white;*/
+/*    padding: 20px;*/
+/*    border-radius: 5px;*/
+/*    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
+/*}*/
+
+/*!* Form styles *!*/
+/*form {*/
+/*    margin-bottom: 20px;*/
+/*}*/
+
+/*label {*/
+/*    display: block;*/
+/*    margin-top: 10px;*/
+/*}*/
+
+/*input[type="number"],*/
+/*textarea {*/
+/*    width: 100%;*/
+/*    padding: 8px;*/
+/*    margin-top: 5px;*/
+/*    margin-bottom: 10px;*/
+/*    border-radius: 5px;*/
+/*    border: 1px solid #ccc;*/
+/*}*/
+
+/*button[type="submit"] {*/
+/*    padding: 8px 16px;*/
+/*    border: none;*/
+/*    border-radius: 5px;*/
+/*    background-color: #333;*/
+/*    color: white;*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*button[type="submit"]:hover {*/
+/*    background-color: #555;*/
+/*}*/
+
+/*!* Review section styles *!*/
+/*.review-section {*/
+/*    margin-top: 20px;*/
+/*}*/
+
+/*.review-section ul {*/
+/*    list-style: none;*/
+/*    padding: 0;*/
+/*}*/
+
+/*.review-section li {*/
+/*    border: 1px solid #ccc;*/
+/*    border-radius: 5px;*/
+/*    padding: 10px;*/
+/*    margin-bottom: 10px;*/
+/*    background-color: #f9f9f9;*/
+/*}*/
+
+
+/* Add the provided CSS styles here */
+body, h1, h2, h3, p, button {
     margin: 0;
     padding: 0;
 }
 
-/* Apply styles to the body */
-body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    background-color: #f2f2f2;
-}
-
-/* Header style */
-header {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    text-align: center;
-}
-
-/* Main container styles */
-.container {
-    max-width: 800px;
-    margin: 20px auto;
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Form styles */
-form {
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
-    margin-top: 10px;
-}
-
-input[type="number"],
-textarea {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
+p{
     margin-bottom: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
 }
 
-button[type="submit"] {
-    padding: 8px 16px;
-    border: none;
-    border-radius: 5px;
-    background-color: #333;
+body {
+    background-color: black;
     color: white;
-    cursor: pointer;
+    font-family: Arial, sans-serif;
 }
 
-button[type="submit"]:hover {
-    background-color: #555;
-}
-
-/* Review section styles */
-.review-section {
+.container {
+    text-align: center;
     margin-top: 20px;
 }
 
-.review-section ul {
-    list-style: none;
-    padding: 0;
+.heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: white;
 }
 
-.review-section li {
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.form-content {
+    text-align: left;
+}
+
+.input-label {
+    color: white;
+    display: block;
+    margin-bottom: 3px;
+}
+
+.form-control {
+    border: 2px solid red;
+    color: white;
+    background-color: black;
     padding: 10px;
+    width: 60%;
     margin-bottom: 10px;
-    background-color: #f9f9f9;
+    display: inline-block;
 }
 
+.btn-primary {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    background-color: black;
+    border: 2px solid red;
+    padding: 15px 40px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.btn-primary:hover {
+    background-color: red;
+    border-color: red;
+    color: white;
+}
+
+.btn-primary:active {
+    animation: clickAnimation 0.3s linear;
+}
+
+@keyframes clickAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Style for the comment input to keep text black */
+.form-control#comment {
+    background-color: black;
+    color: white;
+}
+
+.form-control#rating {
+    background-color: black;
+    color: white;
+}
+
+.form-control#comment:focus {
+    border-color: white; /* Change to your preferred color */
+}
+.form-control#rating:focus {
+    border-color: white; /* Change to your preferred color */
+}
+
+/* Style for the review section */
+.review-section {
+    border: 2px solid red;
+    padding: 10px;
+    background-color: black;
+    color: white;
+}
+
+/* Style for each review item */
+.review-item {
+    border-bottom: 1px solid red;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    background-color: black;
+    color: white;
+}
+
+/* Style for the form group */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Style for the comment label */
+.comment-label {
+    margin-bottom: 5px; /* Adjust as needed */
+}

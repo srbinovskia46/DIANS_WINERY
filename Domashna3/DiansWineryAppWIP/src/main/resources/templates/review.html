@@ -5,6 +5,7 @@
     <title>Review</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/review.css"/>
+    <link rel="stylesheet" href="/css/header.css">
 </head>
 <body>
 
@@ -13,29 +14,30 @@
 <div class="container mt-5">
     <h1>Reviews for Winery: <span th:text="${winery.name}"></span></h1>
 
-    <h2>Add Review</h2>
+    <h2>Add Review</h2><br>
 
     <form th:action="@{/winery/addReview/{wineryId} (wineryId=${winery.getId()})}" th:object="${review}" method="post" class="needs-validation" novalidate>
         <div class="form-group">
-            <label for="rating">Rating:</label>
-            <input type="number" id="rating" th:field="*{rating}" class="form-control" required/>
+            <label for="rating">Rating: </label>
+            <input type="number" id="rating" th:field="*{rating}" class="form-control" required max="10" min="0"/>
             <div class="invalid-feedback">Please provide a rating.</div>
         </div>
 
         <div class="form-group">
-            <label for="comment">Comment:</label>
+            <label for="comment">Comment: </label>
             <textarea id="comment" th:field="*{comment}" class="form-control" required></textarea>
             <div class="invalid-feedback">Please provide a comment.</div>
         </div>
 
         <button type="submit" class="btn btn-primary">Submit Review</button>
     </form>
+    <br>
 
     <div th:if="${reviews != null && reviews.size() > 0}">
         <ul class="list-group mt-4">
-            <li th:each="review : ${reviews}" class="list-group-item">
+            <li th:each="review : ${reviews}" class="list-group-item review-item">
                 <!-- Display review information -->
-                <p style="color: #333333" th:text="'Rating: ' + ${review.rating} + ', Comment: ' + ${review.comment}"></p>
+                <p th:text="'Rating: ' + ${review.rating} + ', Comment: ' + ${review.comment}"></p>
             </li>
         </ul>
     </div>
