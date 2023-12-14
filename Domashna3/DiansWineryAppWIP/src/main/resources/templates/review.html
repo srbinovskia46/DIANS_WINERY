@@ -10,13 +10,14 @@
 <body>
 
 <header th:replace="fragments/header" ></header>
+<a th:href="'/wine-mapper'">Map</a>
 
 <div class="container mt-5">
     <h1>Reviews for Winery: <span th:text="${winery.name}"></span></h1>
 
     <h2>Add Review</h2><br>
 
-    <form th:action="@{/winery/addReview/{wineryId} (wineryId=${winery.getId()})}" th:object="${review}" method="post" class="needs-validation" novalidate>
+    <form th:action="@{/review/addReview/{wineryId} (wineryId=${winery.getId()})}" th:object="${review}" method="post" class="needs-validation" novalidate>
         <div class="form-group">
             <label for="rating">Rating: </label>
             <input type="number" id="rating" th:field="*{rating}" class="form-control" required max="10" min="0"/>

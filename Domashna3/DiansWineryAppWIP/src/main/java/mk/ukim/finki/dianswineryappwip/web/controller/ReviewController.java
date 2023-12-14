@@ -60,7 +60,7 @@ public class ReviewController {
         savedWinery.getReviews().add(review);
         wineryService.save(savedWinery);
 
-        return "redirect:/winery/{wineryId}/reviews";
+        return "redirect:/review/{wineryId}/reviews";
     }
 
 }
