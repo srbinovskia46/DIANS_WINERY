@@ -13,7 +13,7 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 @Controller
-@RequestMapping(value = {"/winery"})
+@RequestMapping(value = {"/review"})
 @AllArgsConstructor
 public class ReviewController {
 

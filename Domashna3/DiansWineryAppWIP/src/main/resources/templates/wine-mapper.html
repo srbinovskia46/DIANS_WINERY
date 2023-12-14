@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Winery Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="/css/wine-mapper.css">
+</head>
+<body>
+<header th:replace="fragments/header"></header>
+
+<div id="map" style="height: 86vh; width: 100%"></div>
+
+<script th:inline="javascript">
+    /* Thymeleaf inline JavaScript to process wineries and display on the map */
+    var wineries = /*[[${wineries}]]*/ [];
+
+    // Initialize the map
+    var map = L.map('map').setView([41.6086, 21.7453], 9); // Set initial coordinates and zoom level
+
+    // Add a Tile Layer (OpenStreetMap)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Process wineries and add markers to the map
+    wineries.forEach(function(winery) {
+        var marker = L.marker([winery.latitude, winery.longitude])
+            .addTo(map)
+            .bindPopup('<b>' + winery.name + '</b><br/>Latitude: ' + winery.latitude + '<br/>Longitude: ' + winery.longitude +
+                '<br/><button onclick="redirectToReview(' + winery.id + ')">Review</button>');
+    });
+
+    // Function to handle the button click and redirect to the review page
+    function redirectToReview(wineryId) {
+        window.location.href = '/review/' + wineryId + '/reviews';
+    }
+</script>
+
+</body>
+</html>
