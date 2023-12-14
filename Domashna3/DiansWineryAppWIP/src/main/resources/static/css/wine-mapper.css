@@ -1,0 +1,43 @@
+/* Reset default margin and padding */
+body, h1, h2, h3, p, button, table {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply black background to the entire page */
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+/* Style the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Table header */
+th {
+    background-color: #333;
+    color: white;
+    padding: 8px;
+}
+
+/* Table rows */
+td {
+    border: 1px solid #ccc;
+    padding: 8px;
+}
+
+/* Alternating row colors */
+tr:nth-child(even) {
+    background-color: #444;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
