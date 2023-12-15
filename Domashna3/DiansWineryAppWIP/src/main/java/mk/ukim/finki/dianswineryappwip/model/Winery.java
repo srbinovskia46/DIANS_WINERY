@@ -16,7 +16,7 @@ public class Winery {
     @Column(nullable = false)
     private String name;
 
-    @OneToMany(mappedBy = "winery")
+    @OneToMany
     private List<Review> reviews;
 
     private double reviewRatingsSum;
@@ -30,6 +30,7 @@ public class Winery {
 
     @Column(nullable = false)
     private float latitude;
+
 
     public Winery() {
     }

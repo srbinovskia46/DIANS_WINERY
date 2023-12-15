@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @Controller
+@RequestMapping(value = {"/", "/home"})
 public class WineryController {
 
     private final WineryService wineryService;
@@ -21,7 +22,7 @@ public class WineryController {
         this.wineryService = wineryService;
     }
 
-    @GetMapping("/wine-mapper")
+    @GetMapping
     public String showAllWineries(Model model) {
         List<Winery> wineries = wineryService.listAll();
         model.addAttribute("wineries", wineries);

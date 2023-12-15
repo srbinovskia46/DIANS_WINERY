@@ -18,6 +18,7 @@ import java.net.ProtocolException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class WineryServiceImpl implements WineryService {
@@ -40,6 +41,7 @@ public class WineryServiceImpl implements WineryService {
     @Override
     public void populateDatabaseFromCSV() {
         String githubRawDataURL = "https://raw.githubusercontent.com/srbinovskia46/DIANS_WINERY/master/src/main/java/mk/ukim/finki/dians_winery/output/wineries.csv";
+        //String githubRawDataURL = "https://raw.githubusercontent.com/srbinovskia46/DIANS_WINERY/master/Domashna3/DiansWineryAppWIP/src/main/resources/static/csv/wineries.csv";
         try {
             URL csvURL = new URL(githubRawDataURL);
             HttpURLConnection connection = (HttpURLConnection) csvURL.openConnection();
@@ -54,6 +56,11 @@ public class WineryServiceImpl implements WineryService {
         } catch (IOException | CsvValidationException e) {
             e.getMessage();
         }
+    }
+
+    @Override
+    public Optional<Winery> findById(Long id) {
+        return wineryRepository.findById(id);
     }
 
 }

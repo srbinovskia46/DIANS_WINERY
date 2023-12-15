@@ -6,36 +6,60 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <link rel="stylesheet" href="/css/wine-mapper.css">
+    <link rel="stylesheet" href="/css/routing.css">
 </head>
 <body>
 <header th:replace="fragments/header"></header>
 
-<div id="map" style="height: 86vh; width: 100%"></div>
+<div id="map" style="height: 80vh; width: 100%"></div>
+
+<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
 
 <script th:inline="javascript">
     /* Thymeleaf inline JavaScript to process wineries and display on the map */
     var wineries = /*[[${wineries}]]*/ [];
-
-    // Initialize the map
-    var map = L.map('map').setView([41.6086, 21.7453], 9); // Set initial coordinates and zoom level
-
-    // Add a Tile Layer (OpenStreetMap)
+    var map = L.map('map').setView([41.6086, 21.7453], 9);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© OpenStreetMap contributors'
+        attribution: '© WineMapper Team'
     }).addTo(map);
 
-    // Process wineries and add markers to the map
-    wineries.forEach(function(winery) {
-        var marker = L.marker([winery.latitude, winery.longitude])
-            .addTo(map)
-            .bindPopup('<b>' + winery.name + '</b><br/>Latitude: ' + winery.latitude + '<br/>Longitude: ' + winery.longitude +
-                '<br/><button onclick="redirectToReview(' + winery.id + ')">Review</button>');
-    });
+    var routingControl = null;
 
-    // Function to handle the button click and redirect to the review page
     function redirectToReview(wineryId) {
         window.location.href = '/review/' + wineryId + '/reviews';
     }
+
+    function showRoute(wineryLatitude, wineryLongitude) {
+        if (routingControl !== null) {
+            map.removeControl(routingControl);
+        }
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                var userLatitude = position.coords.latitude;
+                var userLongitude = position.coords.longitude;
+
+                routingControl = L.Routing.control({
+                    waypoints: [
+                        L.latLng(userLatitude, userLongitude),
+                        L.latLng(wineryLatitude, wineryLongitude)
+                    ],
+                    routeWhileDragging: true
+                }).addTo(map);
+            });
+        } else {
+            console.log("Geolocation is not supported by this browser.");
+        }
+    }
+
+    wineries.forEach(function (winery) {
+        var marker = L.marker([winery.latitude, winery.longitude])
+            .addTo(map)
+            .bindPopup('<b>' + winery.name + '</b><br/>Latitude: ' + winery.latitude + '<br/>Longitude: ' + winery.longitude +
+                '<br/><button onclick="redirectToReview(' + winery.id + ')">Review</button>' +
+                '<button onclick="showRoute(' + winery.latitude + ',' + winery.longitude + ')">Show Route</button>');
+    });
 </script>
 
 </body>

@@ -20,7 +20,7 @@ public class LoginFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
         Filter.super.init(filterConfig);
-        authService.register("wm", "wm123", "wm123", "Wine", "Mapper");
+        //authService.register("wm", "wm123", "wm123", "Wine", "Mapper");
     }
 
     @Override

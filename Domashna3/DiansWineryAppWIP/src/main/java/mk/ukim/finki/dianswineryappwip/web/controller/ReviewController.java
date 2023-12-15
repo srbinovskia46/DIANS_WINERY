@@ -31,14 +31,8 @@ public class ReviewController {
                 .findFirst()
                 .get();
 
-        List<Review> reviewsByWinery = reviewService
-                .listAll()
-                .stream()
-                .filter(review -> review.getWinery().getId().equals(wineryId))
-                .collect(Collectors.toList());
-
         model.addAttribute("winery", winery);
-        model.addAttribute("reviews", reviewsByWinery);
+        model.addAttribute("reviews", winery.getReviews());
         model.addAttribute("wineryId", wineryId);
         model.addAttribute("review", new Review());
         return "review";
@@ -48,16 +42,12 @@ public class ReviewController {
     public String addReview(@ModelAttribute("review") Review review,
                             @PathVariable Long wineryId) {
 
-        Winery savedWinery = wineryService.listAll()
-                .stream()
-                .filter(winery -> winery.getId().equals(wineryId))
-                .findFirst()
-                .get();
+        Review newReview = new Review(review.getRating(), review.getComment());
+        Winery savedWinery = wineryService.findById(wineryId).get();
 
-        review.setWinery(savedWinery);
-        reviewService.save(review);
+        reviewService.save(newReview);
 
-        savedWinery.getReviews().add(review);
+        savedWinery.getReviews().add(newReview);
         wineryService.save(savedWinery);
 
         return "redirect:/review/{wineryId}/reviews";
