@@ -3,6 +3,7 @@ package mk.ukim.finki.dianswineryappwip.service.impl;
 import com.opencsv.CSVParser;
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
+import mk.ukim.finki.dianswineryappwip.model.Review;
 import mk.ukim.finki.dianswineryappwip.model.Winery;
 import mk.ukim.finki.dianswineryappwip.repository.WineryRepository;
 import mk.ukim.finki.dianswineryappwip.service.WineryService;
@@ -61,6 +62,20 @@ public class WineryServiceImpl implements WineryService {
     @Override
     public Optional<Winery> findById(Long id) {
         return wineryRepository.findById(id);
+    }
+
+    @Override
+    public void calculateRating(Long wineryId) {
+        Winery winery = wineryRepository.findById(wineryId).get();
+        if (!winery.getReviews().isEmpty()){
+            List<Review> reviews = winery.getReviews();
+            double sum = 0;
+            for (Review review : reviews){
+                sum += review.getRating();
+            }
+            double rating = sum/reviews.size();
+            winery.setReviewRatingsAverage(rating);
+        }
     }
 
 }

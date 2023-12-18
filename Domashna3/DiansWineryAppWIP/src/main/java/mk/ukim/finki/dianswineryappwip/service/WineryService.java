@@ -11,4 +11,6 @@ public interface WineryService {
     void populateDatabaseFromCSV();
 
     Optional<Winery> findById(Long id);
+
+    void calculateRating(Long wineryId);
 }

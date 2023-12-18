@@ -19,11 +19,7 @@ public class Winery {
     @OneToMany
     private List<Review> reviews;
 
-    private double reviewRatingsSum;
-
-    private int reviewRatingsCount;
-
-    private int reviewRatingsAverage;
+    private double reviewRatingsAverage;
 
     @Column(nullable = false)
     private float longitude;
@@ -40,8 +36,6 @@ public class Winery {
         this.latitude = lat;
         this.longitude = lon;
         this.reviews = new ArrayList<>();
-        this.reviewRatingsSum = 0;
-        this.reviewRatingsCount = 0;
         this.reviewRatingsAverage = 0;
     }
 }
