@@ -48,6 +48,7 @@ public class ReviewController {
         reviewService.save(newReview);
 
         savedWinery.getReviews().add(newReview);
+        wineryService.calculateRating(savedWinery.getId());
         wineryService.save(savedWinery);
 
         return "redirect:/review/{wineryId}/reviews";
