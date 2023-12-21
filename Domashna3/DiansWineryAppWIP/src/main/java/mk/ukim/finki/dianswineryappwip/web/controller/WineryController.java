@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @Controller
-@RequestMapping(value = {"/", "/home"})
+@RequestMapping( "/wineries")
 public class WineryController {
 
     private final WineryService wineryService;

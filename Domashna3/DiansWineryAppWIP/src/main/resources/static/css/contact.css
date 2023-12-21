@@ -1,0 +1,24 @@
+body {
+    background-color: black; /* Set a background color if needed */
+    text-align: left; /* Center text horizontally */
+}
+
+.background {
+    display: inline-block;
+}
+
+.search_text {
+    color: white; /* Set the text color */
+    font-size: 30px; /* Set the font size */
+    font-weight: bold; /* Set font weight if needed */
+    margin-bottom: 20px; /* Adjust margin as needed */
+    margin-top: 100px;
+    margin-left: 20px;
+}
+
+.ucesnici {
+    color: white; /* Set the text color */
+    font-size: 20px; /* Set the font size */
+    line-height: 1.5; /* Set the line height for better readability */
+    margin-left: 20px;
+}

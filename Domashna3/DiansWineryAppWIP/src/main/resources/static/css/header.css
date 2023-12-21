@@ -5,7 +5,19 @@
     padding: 10px 20px;
     font-family: Arial, sans-serif;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Style the logo section */
+.logo-section {
+    display: flex;
+    align-items: center;
 }
 
 /* Style the logo */
@@ -13,21 +25,25 @@
     color: white;
     text-decoration: none;
     font-size: 24px;
-    margin-left: 10px;
-    transition: color 0.3s; /* Add transition for smooth color change */
+    margin-left: 100px;
+    transition: color 0.3s;
 }
 
 /* Change text color on hover */
 .logo:hover {
     color: red;
+    text-decoration: none; /* Remove underline on hover */
 }
 
 /* Style the logo image */
-.logo img {
-    width: 60px; /* Set the width to the desired size */
-    height: auto; /* Automatically adjust height based on width */
+.logo-img {
+    width: 30px;
+    height: auto;
     margin-right: 10px;
 }
 
-
-
+/* Style the logo text */
+.logo-text {
+    margin-left: 5px;
+    text-decoration: none; /* Remove underline for WineMapper */
+}

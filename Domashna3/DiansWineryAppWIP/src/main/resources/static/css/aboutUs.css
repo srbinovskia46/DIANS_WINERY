@@ -1,0 +1,24 @@
+/* CSS for aboutUs.html */
+body {
+    background-color: black; /* Set a background color if needed */
+    text-align: center;
+}
+
+.background {
+    display: inline-block;
+    text-align: center; /* Center the text */
+    margin-top: 50px; /* Adjust the margin from the top as needed */
+}
+
+.naslov {
+    color: white; /* Set the text color */
+    font-size: 30px; /* Set the font size */
+    font-weight: bold; /* Set font weight if needed */
+}
+
+.text {
+    color: white; /* Set the text color */
+    font-size: 20px; /* Set the font size */
+    margin-top: 20px; /* Adjust the margin from the top as needed */
+    line-height: 1.5; /* Set the line height for better readability */
+}
