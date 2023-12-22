@@ -60,6 +60,7 @@ body {
 
 .flag-section img {
     height: 70px; /* Adjust the height as needed */
+    width: 100px;
     margin: 0 10px; /* Adjust the margin between images as needed */
     border: 2px;
 }

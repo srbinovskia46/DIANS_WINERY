@@ -7,11 +7,17 @@
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <link rel="stylesheet" href="/css/wine-mapper.css">
     <link rel="stylesheet" href="/css/routing.css">
+    <style>
+        #map > div.leaflet-control-container > div.leaflet-top.leaflet-left > div{
+            margin-top: 80px;
+            margin-left: 10px;
+        }
+    </style>
 </head>
 <body>
 <header th:replace="fragments/header"></header>
 
-<div id="map" style="height: 80vh; width: 100%"></div>
+<div id="map" style="height: 90vh; width: 100%"></div>
 
 <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
@@ -62,7 +68,7 @@
         var marker = L.marker([winery.latitude, winery.longitude])
             .addTo(map);
 
-        var popupContent = '<b>' + winery.name + '</b>'+L
+        var popupContent = '<b>' + winery.name + '</b>'+
             '<br/>Rating: ' + winery.reviewRatingsAverage +
             '<br/><button onclick="redirectToReview(' + winery.id + ')">Review</button><br>' +
             '<button onclick="showRoute(' + winery.latitude + ',' + winery.longitude + ', this)">Show Route</button><br>' +

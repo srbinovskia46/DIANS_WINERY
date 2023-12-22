@@ -12,6 +12,9 @@ public class LogoutController {
     @GetMapping
     public String logout(HttpServletRequest request){
         request.getSession().invalidate();
+        // Remove geolocation data
+        request.getSession().removeAttribute("userLatitude");
+        request.getSession().removeAttribute("userLongitude");
         return "redirect:/login";
     }
 }

@@ -22,3 +22,18 @@ body {
     line-height: 1.5; /* Set the line height for better readability */
     margin-left: 20px;
 }
+
+a {
+    color: red;
+    text-decoration: none; /* Optional: Remove underline */
+}
+
+/* Change color of anchor elements to green on hover */
+a:hover {
+    color: red;
+}
+
+/* Optional: Add a glowing effect on hover */
+a:hover {
+    text-shadow: 0 0 5px rgba(255,0,0,0.8); /* Adjust the shadow color and size */
+}
