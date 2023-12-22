@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/css/routing.css">
 </head>
 <body>
-<header th:replace="fragments/header"></header>
+<header th:replace="lang_mk/header_mkd"></header>
 
 <div id="map" style="height: 80vh; width: 100%"></div>
 
@@ -62,12 +62,12 @@
         var marker = L.marker([winery.latitude, winery.longitude])
             .addTo(map);
 
-        var popupContent = '<b>' + winery.name + '</b>'+L
-            '<br/>Rating: ' + winery.reviewRatingsAverage +
-            '<br/><button onclick="redirectToReview(' + winery.id + ')">Review</button><br>' +
-            '<button onclick="showRoute(' + winery.latitude + ',' + winery.longitude + ', this)">Show Route</button><br>' +
-            '<button onclick="closeRoute(this)">Close Route</button><br>' +
-            '<button onclick="redirectToMaps(' + winery.latitude + ',' + winery.longitude + ')">View on Google Maps</button>';
+        var popupContent = '<b>' + winery.name + '</b>'+
+            '<br/>Оцена: ' + winery.reviewRatingsAverage +
+            '<br/><button onclick="redirectToReview(' + winery.id + ')">Рецензија</button><br>' +
+            '<button onclick="showRoute(' + winery.latitude + ',' + winery.longitude + ', this)">Прикажи рута</button><br>' +
+            '<button onclick="closeRoute(this)">Затвори рута</button><br>' +
+            '<button onclick="redirectToMaps(' + winery.latitude + ',' + winery.longitude + ')">Погледни на Google Maps</button>';
 
         marker.bindPopup(popupContent);
         marker.options.popupContent = popupContent; // Save the popup content for later use

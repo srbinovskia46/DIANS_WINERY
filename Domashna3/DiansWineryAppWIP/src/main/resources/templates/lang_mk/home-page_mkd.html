@@ -6,11 +6,20 @@
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/home-page.css" />
 </head>
-<body>
-<header th:replace="fragments/header_mkd"></header>
+<body style="background-image: url('/img/Backround_image.jpg');">
+<header th:replace="lang_mk/header_mkd"></header>
 <p class="text1">WineMapper</p>
 
-<p class="text2">Придружи се на најголемата средина на љубители на вино во Македониј</p>
+<p class="text2">Придружи се на најголемата средина на љубители на вино во Македонијa</p>
+
+<div class="flag-section">
+    <a href="/home" class="logo">
+        <img src="/img/USA_flag.png" class="flag" alt="USA Flag" height="20px"/>
+    </a>
+    <a href="/home_mk" class="logo_mk">
+        <img src="/img/Macedonian_flag.png" class="flag" alt="Macedonian Flag" height="20px"/>
+    </a>
+</div>
 
 </body>
 </html>

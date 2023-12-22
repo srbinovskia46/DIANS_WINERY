@@ -1,4 +1,4 @@
-/* CSS for header */
+/* CSS for header_mkd */
 .header {
     background-color: black;
     color: white;
@@ -25,14 +25,14 @@
     color: white;
     text-decoration: none;
     font-size: 24px;
-    margin-left: 100px;
+    margin-left: 10px;
     transition: color 0.3s;
 }
 
 /* Change text color on hover */
 .logo:hover {
     color: red;
-    text-decoration: none; /* Remove underline on hover */
+    text-decoration: none;
 }
 
 /* Style the logo image */
@@ -45,5 +45,20 @@
 /* Style the logo text */
 .logo-text {
     margin-left: 5px;
-    text-decoration: none; /* Remove underline for WineMapper */
+    text-decoration: none;
+}
+
+/* Style the flag images */
+.flag {
+    width: 24px;
+    height: auto;
+    margin-left: 10px;
+}
+
+/* Style the middle content */
+.middle-content {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center; /* Center vertically */
 }
