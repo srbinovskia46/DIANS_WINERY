@@ -3,14 +3,11 @@ import lombok.AllArgsConstructor;
 import mk.ukim.finki.dianswineryappwip.model.Review;
 import mk.ukim.finki.dianswineryappwip.model.Winery;
 import mk.ukim.finki.dianswineryappwip.service.ReviewService;
-import mk.ukim.finki.dianswineryappwip.service.WineryService;;
+import mk.ukim.finki.dianswineryappwip.service.WineryService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping(value = {"/review"})
@@ -53,5 +50,4 @@ public class ReviewController {
 
         return "redirect:/review/{wineryId}/reviews";
     }
-
 }

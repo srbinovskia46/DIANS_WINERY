@@ -19,5 +19,4 @@ public class HomeController {
         model.addAttribute("wineries", wineryService.listAll());
         return "wine-mapper";
     }
-
 }

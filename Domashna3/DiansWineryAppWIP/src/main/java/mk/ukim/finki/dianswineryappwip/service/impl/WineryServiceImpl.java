@@ -41,7 +41,6 @@ public class WineryServiceImpl implements WineryService {
 
     @Override
     public void populateDatabaseFromCSV() {
-        //String githubRawDataURL = "https://raw.githubusercontent.com/srbinovskia46/DIANS_WINERY/master/src/main/java/mk/ukim/finki/dians_winery/output/wineries.csv";
         String githubRawDataURL = "https://raw.githubusercontent.com/srbinovskia46/DIANS_WINERY/master/Domashna3/DiansWineryAppWIP/src/main/resources/static/csv/wineries.csv";
         try {
             URL csvURL = new URL(githubRawDataURL);
