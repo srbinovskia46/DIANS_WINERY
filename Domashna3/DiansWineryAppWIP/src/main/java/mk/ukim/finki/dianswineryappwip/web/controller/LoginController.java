@@ -27,7 +27,7 @@ public class LoginController {
 
     @PostMapping
     public String login(HttpServletRequest request, Model model){
-        User user = null;
+        User user;
         try{
             user = this.authService.login(request.getParameter("username"), request.getParameter("password"));
             request.getSession().setAttribute("user", user);

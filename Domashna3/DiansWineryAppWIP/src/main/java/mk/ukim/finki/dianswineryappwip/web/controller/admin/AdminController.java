@@ -30,7 +30,4 @@ public class AdminController {
         model.addAttribute("wineries", wineryService.listAll());
         return "redirect:/home";
     }
-
-
-
 }

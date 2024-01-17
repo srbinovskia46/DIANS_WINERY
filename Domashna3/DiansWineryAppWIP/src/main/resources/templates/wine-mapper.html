@@ -30,7 +30,6 @@
     }).addTo(map);
 
     var routingControl = null;
-    var openedMarkers = {};
 
     function redirectToReview(wineryId) {
         window.location.href = '/review/' + wineryId + '/reviews';
@@ -76,7 +75,7 @@
             '<button onclick="redirectToMaps(' + winery.latitude + ',' + winery.longitude + ')">View on Google Maps</button>';
 
         marker.bindPopup(popupContent);
-        marker.options.popupContent = popupContent; // Save the popup content for later use
+        marker.options.popupContent = popupContent;
     }
 
     function redirectToMaps(wineryLatitude, wineryLongitude) {
