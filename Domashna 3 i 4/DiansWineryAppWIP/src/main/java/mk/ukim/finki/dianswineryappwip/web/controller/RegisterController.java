@@ -2,6 +2,7 @@ package mk.ukim.finki.dianswineryappwip.web.controller;
 
 import mk.ukim.finki.dianswineryappwip.model.exceptions.InvalidArgumentsException;
 import mk.ukim.finki.dianswineryappwip.model.exceptions.PasswordsDoNotMatchException;
+import mk.ukim.finki.dianswineryappwip.model.exceptions.UsernameAlreadyExistsException;
 import mk.ukim.finki.dianswineryappwip.service.AuthService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -38,8 +39,8 @@ public class RegisterController {
         try {
             authService.register(username, password, repeatedPassword, name, surname);
             return "redirect:/login";
-        }catch (InvalidArgumentsException | PasswordsDoNotMatchException exception) {
-            return "redirect:/redirect?error=" + exception.getMessage();
+        } catch (InvalidArgumentsException | PasswordsDoNotMatchException | UsernameAlreadyExistsException exception)  {
+            return "redirect:/register?error=" + exception.getMessage();
         }
     }
 }
